@@ -1,29 +1,77 @@
 /* this file is loaded by index.html and styles the page */
 
 * {
+
+  background: #6c70d0;
   box-sizing: border-box;
+
 }
 
 body {
+
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
   font-family: sans-serif;
-  margin: 2em 1em;
+  min-height: 100vh;
+   
+
   line-height: 1.5em;
+
+}
+header{
+   margin: -2em -0.5em;
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
-  max-width: calc(100% - 5rem);
-  line-height: 1.1;
+
+  
+  text-align: center;
+  background: #5b5b5d;
+  font-family: sans-serif ;
+  color: white;
+  max-width: calc(100% );
+  line-height: 3.5;
+}
+main{
+
+      border-radius: 0.3em;
+    background: #f3f3f3;
+     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+
 }
 
-form {
-  background-color: #eee;
-  display: grid;
-  grid-gap: 1em;
-  padding: 1em;
-  max-width: 40ch;
+
+
+
+img{
+  border-radius: 4em;
+  position: absolute;
+  width: 4em;
+  top: 1.2em;
+  left: 1em;
+
 }
+
+p {
+  font-size: 1.5em;
+
+    margin: auto;
+margin-top: 2em;
+  border-radius: 0.2em;
+  text-align: center;
+  background: #f2f2fd;
+  font-family: sans-serif ;
+  color: #808186;
+  max-width: calc(100% - 10em);
+  
+}
+
+
+
 
 input {
   border: 1px solid silver;
@@ -34,23 +82,20 @@ input {
   width: 100%;
 }
 
-form button {
-  background-color: #bbbbf2;
-  border: 2px solid currentColor;
-  border-radius: .25em;
-  cursor: pointer;
-  font-size: inherit;
-  line-height: 1.4em;
-  padding: 0.25em 1em;
-  max-width: 20ch;
-}
+div{
 
-form button:hover {
-  background-color: lavender;
+  margin: 1em;
+  background-color: transparent;
+  color: white;
 }
 
 footer {
-  margin-top: 3em;
-  padding-top: 1.5em;
-  border-top: 1px solid lightgrey;
+   margin: 0em -0.5em;
+  color: white;
+ 
+  
+
+  
+  background: #5b5b5d;
+
 }
