@@ -66,6 +66,9 @@ client.on("message", async (message) => {
   if (message.content === "ping") {
     message.reply("pong");
   }
+   if (message.content === "pong") {
+    message.reply("MXMX");
+  }
 
   if (message.content === "Hello") {
     message.channel.send(`Hello ${message.author}`);
