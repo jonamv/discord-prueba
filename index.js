@@ -175,6 +175,11 @@ client.on("message", async (message) => {
     message.channel.send(SaludoRandom[MensajeAleatorio]);
   }
 
+
+             //IMAGENES O GIF PARA INTERACCIONES
+
+
+   // Abrazo          
   var GifHug = [
     "https://media.tenor.com/images/acd0a348a4dc3ac55049bc83e4e75d92/tenor.gif",
     "https://cdn63.picsart.com/198502143004202.gif",
@@ -182,25 +187,110 @@ client.on("message", async (message) => {
     "https://pa1.narvii.com/6088/9c72715f55756f0a70094f77867bd3a2e8611309_hq.gif",
     "https://pa1.narvii.com/6384/6d0504803221232f32b187120c45566c640fb09f_00.gif",
     "https://cdn73.picsart.com/199107256000202.gif?to=min&r=640",
-    "https://i.pinimg.com/originals/aa/3f/f9/aa3ff9b708e9255382c70e2c2570ef83.png",
+    "https://i.pinimg.com/originals/aa/3f/f9/aa3ff9b708e9255382c70e2c2570ef83.png"
   ];
   var HugAleatorio = Math.floor(Math.random() * GifHug.length);
 
+
+  // llorar
+  var GifCry =[
+    "https://media0.giphy.com/media/Xqlsn2kLPBquI/200.gif",
+    "https://media2.giphy.com/media/ROF8OQvDmxytW/giphy.gif",
+    "https://media1.tenor.com/images/da5637e855f202b36f643189de9d2d96/tenor.gif?itemid=13902077"
+  ]
+  var CryAleatorio = Math.floor(Math.random() * GifCry.length);
+
+
+  // bailar
+  var GifDance =[
+
+    "https://media1.tenor.com/images/47d5d52b84ca2117c336ab3de3978b3a/tenor.gif?itemid=13973731",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMeDNMQMUukFQqg4Yu4kF3VtuDPHMboZXeXuFu9iJxTG14jmIk&usqp=CAU",
+    "https://d2w9rnfcy7mm78.cloudfront.net/2145256/original_cd9c01187cead45cd791beafa78f7e08.gif?1525707539",
+    "https://media.tenor.com/images/707d8108893f0bf8c7609368e4152f5b/tenor.gif"
+
+  ]
+  var DanceAleatorio = Math.floor(Math.random() * GifDance.length);
+
+
+
+
+
+                    // INTERACCIONES
+
+    // abrazó
   if (message.content.startsWith(".hug")) {
     const Abrazo = new MessageEmbed()
 
-      // .setImage('https://media.tenor.com/images/acd0a348a4dc3ac55049bc83e4e75d92/tenor.gif')
       .setImage(GifHug[HugAleatorio]);
 
-    let user = message.mentions.users.first() || message.author;
+    let user = message.mentions.users.first()
+
+   if (!user ){
 
     message.channel.send(
-      "<@" + message.author + "> abrazó  a <@" + user.id + "> uwu"
+      "**JonaBot** abrazó a <@" + message.author + ">uwu")
+
+   } else message.channel.send(
+      "<@" + message.author + "> abrazó  a **<@" + user.id + ">** uwu"
     );
     message.channel.send(Abrazo);
   }
 
-  // ROLES
+//Llorar
+if (message.content.startsWith(".cry")) {
+    const Cry = new MessageEmbed()
+
+      .setImage(GifCry[CryAleatorio]);
+
+    let user = message.mentions.users.first()
+
+   if (!user ){
+
+    message.channel.send(
+      "<@" + message.author + "> esta muy triste que empezó a llorar U,n,U");
+
+   } else message.channel.send(
+      "<@" + message.author + "> empezó a llorar junto a **<@" + user.id + ">** "
+    );
+    message.channel.send(Cry);
+  }
+
+
+//bAilar
+
+  if (message.content.startsWith(".dance")) {
+    const Bailar = new MessageEmbed()
+
+      .setImage(GifDance[DanceAleatorio]);
+
+    let user = message.mentions.users.first()
+
+   if (!user ){
+
+    message.channel.send(
+      "<@" + message.author + ">se puso a bailar bien perron")
+
+   } else message.channel.send(
+      "<@" + message.author + "> mueve el esqueleto con **<@" + user.id + ">** uwu"
+    );
+    message.channel.send(Bailar);
+  }
+
+
+
+
+
+
+
+
+
+
+
+                                  // ROLES
+
+
+   // comando de borrar                                 
   if (message.content.startsWith(".clear")) {
     if (
       message.member.roles.cache.find((rol) => rol.id === "722892500066500660")

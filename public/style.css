@@ -40,14 +40,14 @@ main{
      display: flex;
     flex-direction: column;
     flex-grow: 1;
+    overflow-y: hidden;
 
 
 }
 
 
 
-
-img{
+#perfil{
   border-radius: 4em;
   position: absolute;
   width: 4em;
@@ -57,9 +57,11 @@ img{
 }
 
 p {
+  background-color: transparent;
   font-size: 1.5em;
 
-    margin: auto;
+margin-left: auto;
+margin-right: auto;
 margin-top: 2em;
   border-radius: 0.2em;
   text-align: center;
@@ -68,6 +70,12 @@ margin-top: 2em;
   color: #808186;
   max-width: calc(100% - 10em);
   
+}
+#botConectado{
+
+  background-color: transparent;
+
+ width: 100%;
 }
 
 
